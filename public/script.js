@@ -86,7 +86,7 @@ form.addEventListener("submit", async (e) => {
 
 // Re-filter whenever a dropdown changes
 document.getElementById("price-filter").addEventListener("change", loadApartments);
-// TODO: add the same line for "bed-filter"
-// TODO: add the same line for "distance-filter"
+document.getElementById("bed-filter").addEventListener("change", loadApartments);
+document.getElementById("distance-filter").addEventListener("change", loadApartments);
 
 loadApartments();

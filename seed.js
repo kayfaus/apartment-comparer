@@ -2,17 +2,17 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const Apartment = require("./models/Apartment");
 
-// USC-area student housing (distances are rough estimates in miles)
+// USC-area student housing (distances are rough estimates in miles) - this can all be changed 
 const apartments = [
-  { name: "Greene Crossing", distance: 0.8 },
-  { name: "The Mills", distance: 1.0 },
-  { name: "The Hub at Columbia", distance: 0.6 },
+    { name: "Greene Crossing", distance: 0.8 },
+  { name: "The Mills", distance: 1.8 },
+  { name: "The Hub at Columbia", distance: 0.3 },
   { name: "Gateway 737", distance: 0.7 },
-  { name: "The Standard", distance: 0.8 },
+  { name: "The Standard", distance: 0.9 },
   { name: "VERVE Columbia", distance: 1.2 },
-  { name: "Olympia", distance: 1.5 },
-  { name: "Park Place", distance: 0.5 },
-  { name: "Sawyer on Lincoln", distance: 0.6 },
+  { name: "Olympia", distance: 2.5 },
+  { name: "Park Place", distance: 0.4 },
+  { name: "Sawyer on Lincoln", distance: 3.1 },
 ];
 
 // Random whole number between min and max (inclusive)
