@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Apartment Comparer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carolina Cribs</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Apartment Comparer</h1>
-  <p>Find the best off-campus apartment for your budget.</p>
+  <div id="nav"></div>
+
+  <main>
+    <h1 class="headline">Student Housing Simplified</h1>
+
+    <section id="add">
+      <h2>Add an Apartment</h2>
+      <form id="apartment-form">
+        <input id="name" placeholder="Apartment name" required>
+        <input id="address" placeholder="Address (optional)">
+        <input id="rent" type="number" min="0" placeholder="Monthly rent ($)" required>
+        <input id="bedrooms" type="number" min="0" placeholder="Bedrooms" required>
+        <input id="distance" type="number" min="0" step="0.1" placeholder="Miles to campus" required>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <h2>Apartments</h2>
+    <div id="apartment-list" class="grid"></div>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+:root {
+  --garnet: #73000A;
+  --gold: #D4A12A;
+  --cream: #FBF4EA;
+  --text: #2B2B2B;
+  --muted: #777;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* ----- Navbar ----- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--garnet);
+  padding: 14px 32px;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+}
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 600;
+  padding-bottom: 2px;
+}
+.navbar nav a.active { border-bottom: 2px solid white; }
+
+/* ----- Buttons & inputs ----- */
+.gold-btn, button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--text);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font: inherit;
+}
+
+/* ----- Layout ----- */
+main { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+
+.headline, h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--garnet);
+}
+.muted { color: var(--muted); }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ----- Cards ----- */
+.card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--garnet);
+  margin: 0 30px 4px 0;
+}
+.card p { margin: 4px 0; }
+.price { font-size: 20px; font-weight: 600; }
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: var(--garnet);
+  font-size: 22px;
+  padding: 0;
+}
+
+/* ----- Compare ----- */
+.picker { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.pick {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+th { background: var(--garnet); color: white; }
+.row-label { font-weight: 600; }
+.best { background: #FFF3D6; font-weight: 600; }
+
+/* ----- Map & Reviews (list on left, content on right) ----- */
+.side-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.side-list { display: flex; flex-direction: column; gap: 8px; }
+.side-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: white;
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+.side-item span { color: var(--muted); font-weight: 400; font-size: 14px; }
+.side-item.active { outline: 2px solid var(--garnet); }
+
+#map-frame {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.review-form { flex-direction: column; margin-bottom: 16px; }
+.review-form textarea { min-height: 90px; }
+.stars { color: var(--gold); font-weight: 600; }
+
+/* ----- Phones ----- */
+@media (max-width: 700px) {
+  .navbar { padding: 12px 16px; }
+  .navbar nav a { margin: 0 8px; }
+  .side-layout { grid-template-columns: 1fr; }
+}
