@@ -46,11 +46,15 @@
           <option value="5">Under 5 mi</option>
         </select>
       </div>
+      <button type="button" id="clear-filters" class="clear-btn">Clear</button>
     </div>
   </section>
 
   <main>
-    <h2>Apartments</h2>
+    <div class="results-header">
+      <h2>Apartments</h2>
+      <span id="result-count" class="muted"></span>
+    </div>
     <div id="apartment-list" class="grid"></div>
 
     <section id="add">

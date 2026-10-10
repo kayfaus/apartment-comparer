@@ -1,13 +1,14 @@
 {
   "name": "apartment-comparer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Carolina Cribs - find and compare off-campus apartments near USC",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "seed": "node seed.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kayleigh Faus",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
