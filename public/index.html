@@ -7,28 +7,66 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="nav"></div>
+  <header class="navbar">
+    <span class="logo">Carolina Cribs</span>
+    <a href="#add" class="gold-btn">Add an Apartment</a>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Student Housing Simplified</h1>
+
+    <div class="filter-bar">
+      <div class="filter">
+        <label for="price-filter">Price</label>
+        <select id="price-filter">
+          <option value="">Any</option>
+          <option value="1000">Under $1,000</option>
+          <option value="1250">Under $1,250</option>
+          <option value="1500">Under $1,500</option>
+          <option value="2000">Under $2,000</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="bed-filter">Bedrooms</label>
+        <select id="bed-filter">
+          <option value="">Any</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="distance-filter">Distance to Campus</label>
+        <select id="distance-filter">
+          <option value="">Any</option>
+          <option value="0.5">Under 0.5 mi</option>
+          <option value="1">Under 1 mi</option>
+          <option value="2">Under 2 mi</option>
+          <option value="5">Under 5 mi</option>
+        </select>
+      </div>
+    </div>
+  </section>
 
   <main>
-    <h1 class="headline">Student Housing Simplified</h1>
+    <h2>Apartments</h2>
+    <div id="apartment-list" class="grid"></div>
 
     <section id="add">
       <h2>Add an Apartment</h2>
       <form id="apartment-form">
         <input id="name" placeholder="Apartment name" required>
         <input id="address" placeholder="Address (optional)">
+        <input id="image" placeholder="Photo URL (optional)">
         <input id="rent" type="number" min="0" placeholder="Monthly rent ($)" required>
         <input id="bedrooms" type="number" min="0" placeholder="Bedrooms" required>
         <input id="distance" type="number" min="0" step="0.1" placeholder="Miles to campus" required>
         <button type="submit">Add</button>
       </form>
     </section>
-
-    <h2>Apartments</h2>
-    <div id="apartment-list" class="grid"></div>
   </main>
 
-  <script src="common.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
