@@ -42,10 +42,14 @@ async function loadApartments() {
   // Keep only apartments that match every filter
   const filtered = apartments.filter((apt) => {
     if (maxRent && apt.rent > Number(maxRent)) return false;
-    // TODO: bedrooms check (hide if apt.bedrooms is LESS than minBeds)
-    // TODO: distance check (hide if apt.distance is MORE than maxDistance)
+    if (minBeds && apt.bedrooms < Number(minBeds)) return false;
+    if (maxDistance && apt.distance > Number(maxDistance)) return false;
     return true;
   });
+
+  // Show how many matched
+  document.getElementById("result-count").textContent =
+    `Showing ${filtered.length} of ${apartments.length}`;
 
   list.innerHTML = "";
   if (filtered.length === 0) {
@@ -88,5 +92,13 @@ form.addEventListener("submit", async (e) => {
 document.getElementById("price-filter").addEventListener("change", loadApartments);
 document.getElementById("bed-filter").addEventListener("change", loadApartments);
 document.getElementById("distance-filter").addEventListener("change", loadApartments);
+
+// Reset all filters
+document.getElementById("clear-filters").addEventListener("click", () => {
+  document.getElementById("price-filter").value = "";
+  document.getElementById("bed-filter").value = "";
+  document.getElementById("distance-filter").value = "";
+  loadApartments();
+});
 
 loadApartments();
